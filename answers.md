@@ -1,3 +1,5 @@
+# Part 1
+
 # Question 1a
 var image = document.querySelector('img');
 image.src = "https://patiliyo.com/wp-content/uploads/2017/07/ruyada-kedi-gormek.jpg";
@@ -62,3 +64,40 @@ submitButton.disabled = true;
 var aside = document.querySelector('aside.highlight');
 var bioInfo = document.querySelector('.bio-info');
 aside.removeChild(bioInfo);
+
+
+# Part 2
+
+# Question 1a
+var timeTravel = document.querySelector('#time-travel').parentNode;
+document.querySelector('body section div').removeChild(timeTravel);
+
+# Question 1b
+var pikachuDrawing = document.querySelector('#right-image');
+var portfolioContainer = document.querySelector('.portfolio-container');
+portfolioContainer.appendChild(pikachuDrawing.cloneNode(true));
+
+# Question 2
+for (var i = 0; i < 10; i++) {
+  portfolioContainer.appendChild(pikachuDrawing.cloneNode(true));
+}
+
+# Question 3
+var listItem = document.createElement('li');
+listItem.classList.add('bio-info-item');
+
+var leftSpan = document.createElement('span');
+var lastUpdated = document.createTextNode('Page last updated on');
+leftSpan.appendChild(lastUpdated);
+leftSpan.classList.add('bio-info-title');
+listItem.appendChild(leftSpan);
+
+var rightSpan = document.createElement('span');
+var date = new Date();
+var lastUpdatedText = document.createTextNode(date);
+rightSpan.appendChild(lastUpdatedText);
+rightSpan.classList.add('bio-info-value', 'bio-info-last-updated');
+listItem.appendChild(rightSpan);
+
+var unorderedList = document.querySelector('ul.bio-info');
+unorderedList.appendChild(listItem);
